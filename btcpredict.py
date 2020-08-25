@@ -8,8 +8,8 @@ price_url="https://api.coindesk.com/v1/bpi/historical/close.json"
 request=requests.get(price_url)
 result=request.json()
 bpi=result['bpi']
-dates=np.arange(1,32)
 prices = list(bpi.values())
+dates=np.arange(1,len(prices)+1)
 pickatype=int(input("polynom(1) or linear(2): "))
 
 if pickatype==1:
